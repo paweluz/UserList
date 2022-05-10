@@ -3,8 +3,9 @@ package pl.pawlak.pawel.userlist.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name= "employee")
+@Table(name = "employee")
 public class Employee {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +21,12 @@ public class Employee {
     private String emailId;
 
     public Employee() {
+    }
+
+    public Employee(Employee employee) {
+        this.firstName = employee.firstName;
+        this.lastName = employee.lastName;
+        this.emailId = employee.emailId;
     }
 
     public Employee(String firstName, String lastName, String emailId) {
