@@ -5,7 +5,7 @@
     <td>First name</td>
     <td>Last name</td>
     <td>Email id</td>
-    <td>Actions</td>
+    <td style="text-align: center">Actions</td>
   </tr>
   </thead>
   <tbody>
@@ -13,8 +13,9 @@
     <td>{{employee.firstName}}</td>
     <td>{{employee.lastName}}</td>
     <td>{{employee.emailId}}</td>
-    <td>
+    <td style="text-align: center">
       <button (click)="updateEmployee(employee.id)" class="btn btn-info">Edit</button>
+      <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">View</button>
       <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
     </td>
   </tr>
