@@ -11,16 +11,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/")
 public class EmployeeController {
-
     private final EmployeeRepository employeeRepository;
-
 
     public EmployeeController(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
     @GetMapping("/employees")
-    public List<Employee> getAllEmployees(){
+    public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
