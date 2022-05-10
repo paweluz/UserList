@@ -1,8 +1,6 @@
 package pl.pawlak.pawel.userlist.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.pawlak.pawel.userlist.model.Employee;
 import pl.pawlak.pawel.userlist.repository.EmployeeRepository;
 
@@ -21,5 +19,11 @@ public class EmployeeController {
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
+
+    @PostMapping("/employee")
+    public Employee createEmployee(@RequestBody Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
 
 }
